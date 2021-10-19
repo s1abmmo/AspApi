@@ -23,12 +23,17 @@ namespace AspApi.Controllers
             _logger = logger;
         }
 
-        [HttpGet]
-        public String Get()
+        [HttpGet("{id}")]
+        public String GetList(int id)
         {
-            return "con cac";
+            return id.ToString();
         }
 
+        [HttpPost("{id}")]
+        public String PostList(int id)
+        {
+            return id.ToString();
+        }
 
     }
 }
