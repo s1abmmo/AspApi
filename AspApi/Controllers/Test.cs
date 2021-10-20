@@ -8,14 +8,9 @@ using System.Threading.Tasks;
 namespace AspApi.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("test")]
     public class TestController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
-
         private readonly ILogger<TestController> _logger;
 
         public TestController(ILogger<TestController> logger)
@@ -26,7 +21,8 @@ namespace AspApi.Controllers
         [HttpGet("{id}")]
         public String GetList(int id)
         {
-            return id.ToString();
+            string test1=Request.Query["test1"];
+            return id.ToString()+ test1;
         }
 
         [HttpPost("{id}")]
